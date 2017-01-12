@@ -1,7 +1,4 @@
-package com.javarush.test.level19.lesson10.bonus03;
-
-/* Знакомство с тегами
-Считайте с консоли имя файла, который имеет HTML-формат
+/* Считайте с консоли имя файла, который имеет HTML-формат
 Пример:
 Info about Leela <span xml:lang="en" lang="en"><b><span>Turanga Leela
 </span></b></span><span>Super</span><span>girl</span>
