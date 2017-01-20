@@ -24,7 +24,6 @@ text1, text2 могут быть пустыми
 */
 
 import java.io.*;
-
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -37,12 +36,10 @@ public class Solution {
         while (fileReader.ready()) {
             S += (char)fileReader.read();
         }
-
         int startOpeningIndex=0;
         int startClosingIndex=0;
         int lastIndex = S.lastIndexOf("</" + args[0]);
         Map<Integer, String> tagsIndexes = new TreeMap<>();
-
         while (true) {
             int lastOpeningIndex = S.indexOf("<" + args[0], startOpeningIndex);
             tagsIndexes.put(lastOpeningIndex, "<tag");
@@ -52,18 +49,10 @@ public class Solution {
             tagsIndexes.put(lastClosingIndex, "</tag>");
             if (lastClosingIndex == lastIndex) break;
             startClosingIndex = lastClosingIndex+1;
-
         }
-
-      /** for (Map.Entry<Integer,String> map:tagsIndexes.entrySet()) {
-            System.out.println(map.getKey() + ": " + map.getValue());}*/
-        // here starting finding closing tags for each opening tags in map
-
-        for (Map.Entry<Integer,String> map:tagsIndexes.entrySet()) {
-
+            for (Map.Entry<Integer,String> map:tagsIndexes.entrySet()) {
             if (map.getValue().equals("<tag")) {
                 int indexOfCurrentTag = map.getKey();
-
                 int conditionOfLastTag = 1;
                 // here for each opening tags open new same map (subMap) and finding closing tag in this map starting with
                 // position of currentTag+1;
@@ -77,10 +66,8 @@ public class Solution {
                             if (subMap.getValue().equals("</tag>")) conditionOfLastTag--; else conditionOfLastTag++;
                             if (conditionOfLastTag == 0)
                             {
-
                                 break;
                             }
-
                     }
                     }
 
