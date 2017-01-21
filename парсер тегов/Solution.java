@@ -1,4 +1,4 @@
-/* Считайте с консоли имя файла, который имеет HTML-формат
+
 Пример:
 Info about Leela <span xml:lang="en" lang="en"><b><span>Turanga Leela
 </span></b></span><span>Super</span><span>girl</span>
@@ -50,7 +50,7 @@ public class Solution {
             if (lastClosingIndex == lastIndex) break;
             startClosingIndex = lastClosingIndex+1;
         }
-            for (Map.Entry<Integer,String> map:tagsIndexes.entrySet()) {
+        for (Map.Entry<Integer,String> map:tagsIndexes.entrySet()) {
             if (map.getValue().equals("<tag")) {
                 int indexOfCurrentTag = map.getKey();
                 int conditionOfLastTag = 1;
